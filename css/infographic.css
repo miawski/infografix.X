@@ -1,0 +1,117 @@
+#head-txt {
+  fill: rgb(54, 54, 54);
+}
+.info-graphic,
+.info-text {
+  background-color: var(--color-info-bg);
+  padding: 20px 0;
+}
+.info-graphic {
+  border-radius: 0;
+  margin: 60px auto 80px auto;
+}
+.info-text h2 {
+  line-height: 3rem;
+  text-align: center;
+  background-color: var(--color-headline-bg);
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+.info-text h3 {
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+.info-text > *:not(:first-child) {
+  margin: 0 clamp(1rem, 10%, 7rem);
+}
+.info-text p {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  margin: 0 0 1.2rem 0;
+  padding: 0;
+}
+.info-box {
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  background-color: var(--color-card-bg);
+}
+.info-box:nth-of-type(2n) {
+  background-color: var(--color-card-bg-inverted);
+}
+
+/* Awabs custom infographix */
+
+.info-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto 80px auto;
+  padding: 20px;
+}
+
+.infographic_img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* js main infographic styling */
+#ringtone {
+  cursor: pointer;
+}
+
+#won {
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#won.active {
+  background-color: rgba(246, 146, 32, 0.12);
+  box-shadow: 0 0 0 2px #f69220 inset;
+  border-radius: 12px;
+  transform: scale(1.01);
+}
+
+/* BODY CSS */
+
+/* clickable parts */
+#head,
+#chest {
+  cursor: pointer;
+}
+
+/* keep the base body black */
+/* base state: everything starts black */
+#won svg path {
+  fill: rgb(255, 187, 0);
+  transition:
+    fill 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* lips hidden by default */
+#lips path {
+  opacity: 0;
+}
+
+/* head click -> original SVG head color */
+#head.active-head path {
+  fill: #ed2024;
+}
+
+/* chest click -> original SVG chest color */
+#chest.active-chest path {
+  fill: #9e1f63;
+}
+
+/* show lips when head is clicked */
+#lips.visible-lips path {
+  opacity: 1;
+  fill: #662d91;
+}
