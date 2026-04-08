@@ -3,6 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-family-sans);
+}
+
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.55;
+}
+
 body {
   font-family: var(--font-family-sans);
   color: var(--color-text);
@@ -11,6 +25,11 @@ body {
 header {
   height: min-content;
   background-color: var(--color-head-bg);
+  font-family: var(--font-family-sans);
+}
+
+nav {
+  font-family: var(--font-family-sans);
 }
 
 .logo {
@@ -36,6 +55,11 @@ main section {
   padding: 20px;
   border-radius: var(--border-radius);
 }
+
+main p {
+  max-width: 65ch;
+}
+
 h1 {
   font-size: var(--font-h1-size);
   font-weight: var(--font-weight-bold);
@@ -43,7 +67,7 @@ h1 {
   margin: 5px 0;
   line-height: 1.3rem;
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-family-sans);
   margin-top: 50px;
 }
 
@@ -54,12 +78,7 @@ h1 {
   background-color: var(--color-head-bg);
   font-size: var(--font-h2-size);
 }
-#instruction p {
-  grid-column: 1/-1;
-  margin-bottom: 20px;
-  font-size: var(--font-h2-size);
-  line-height: 1.5rem;
-}
+
 .sub {
   font-size: var(--font-sub1-size);
   font-weight: var(--font-weight-light);
@@ -73,6 +92,7 @@ h3 {
 }
 main > h1 {
   width: calc(80% - 6rem);
+  margin-inline: auto;
 }
 /* NAVIGATION STRUCTURES */
 header > nav {
@@ -144,9 +164,17 @@ nav a:active {
 
 /* FOOTER */
 footer {
-  background-color: var(--color-head-bg);
+  background-color: var(--color-menu-bg);
 }
 
-footer a {
+footer a,
+footer a:visited {
   font-size: 0.7rem;
+  color: rgb(255, 217, 0);
+  display: inline-block;
+  overflow-wrap: anywhere;
+}
+
+footer nav {
+  padding: 1rem 0;
 }
