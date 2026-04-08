@@ -1,4 +1,3 @@
-const basebody = document.querySelector("#basebody");
 const chest = document.querySelector("#chest");
 const head = document.querySelector("#head");
 const lips = document.querySelector("#lips");
@@ -9,17 +8,38 @@ function clearBodyStates() {
   if (lips) lips.classList.remove("visible-lips");
 }
 
-if (head) {
-  head.addEventListener("click", () => {
-    clearBodyStates();
+function toggleHead() {
+  if (!head) return;
+
+  const isActive = head.classList.contains("active-head");
+
+  clearBodyStates();
+
+  if (!isActive) {
     head.classList.add("active-head");
-    if (lips) lips.classList.add("visible-lips");
-  });
+
+    if (lips) {
+      lips.classList.add("visible-lips");
+    }
+  }
+}
+
+function toggleChest() {
+  if (!chest) return;
+
+  const isActive = chest.classList.contains("active-chest");
+
+  clearBodyStates();
+
+  if (!isActive) {
+    chest.classList.add("active-chest");
+  }
+}
+
+if (head) {
+  head.addEventListener("click", toggleHead);
 }
 
 if (chest) {
-  chest.addEventListener("click", () => {
-    clearBodyStates();
-    chest.classList.add("active-chest");
-  });
+  chest.addEventListener("click", toggleChest);
 }

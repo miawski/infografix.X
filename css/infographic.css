@@ -71,6 +71,16 @@
 /* js main infographic styling */
 #ringtone {
   cursor: pointer;
+  border: 0;
+  background-color: var(--color-head-bg);
+  color: var(--color-text-inverted);
+  font: inherit;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-links);
+  cursor: pointer;
+}
+#ringtone:hover {
+  background-color: var(--color-link-hover);
 }
 
 #won {
